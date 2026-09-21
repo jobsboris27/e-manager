@@ -1,9 +1,6 @@
 package dev.sorokin.eventmanager.location.api.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public record LocationUpdateRequest(
         @NotBlank(message = "Название обязательно")
@@ -15,5 +12,6 @@ public record LocationUpdateRequest(
 
         @NotNull(message = "Вместимость обязательна")
         @Positive(message = "Вместимость должна быть положительным числом")
+        @Min(value = 5, message = "Вместимость должна быть больше или равна 5")
         Integer capacity
 ) {}
