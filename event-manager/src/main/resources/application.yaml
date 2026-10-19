@@ -20,6 +20,10 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/changelog-master.yaml
 
+jwt:
+  secret: change-me-this-secret-must-be-at-least-32-bytes-long
+  lifetime: 1h
+
 logging:
   level:
     root: INFO
